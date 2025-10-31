@@ -10,9 +10,7 @@ AppState appStateReducer(AppState state, action) {
 Reducer<List<Item>> itemReducer = combineReducers<List<Item>>([]);
 
 List<Item> addItemReducer(List<Item> items, AddItemAction action) {
-  return []
-    ..addAll(items)
-    ..add(Item(id: action.id, body: action.item));
+  return [...items, Item(id: action.id, body: action.item)];
 }
 
 /*List<Item> itemReducer(List<Item> state, action) {

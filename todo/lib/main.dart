@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   final DevToolsStore<AppState> store;
-  MyHomePage(this.store);
+  const MyHomePage(this.store, {super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,7 +65,7 @@ class MyHomePage extends StatelessWidget {
 class RemoveItemsButton extends StatelessWidget {
   final _ViewModel model;
 
-  RemoveItemsButton(this.model);
+  const RemoveItemsButton(this.model, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +79,7 @@ class RemoveItemsButton extends StatelessWidget {
 class ItemListWidget extends StatelessWidget {
   final _ViewModel model;
 
-  ItemListWidget(this.model);
+  const ItemListWidget(this.model, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +102,7 @@ class ItemListWidget extends StatelessWidget {
 class AddItemWidget extends StatefulWidget {
   final _ViewModel model;
 
-  AddItemWidget(this.model);
+  const AddItemWidget(this.model, {super.key});
 
   @override
   _AddItemState createState() => _AddItemState();
@@ -138,23 +138,23 @@ class _ViewModel {
   });
 
   factory _ViewModel.create(Store<AppState> store) {
-    _onAddItem(String body) {
+    onAddItem(String body) {
       store.dispatch(AddItemAction(body));
     }
 
-    _onRemoveItem(Item item) {
+    onRemoveItem(Item item) {
       store.dispatch(RemoveItemAction(item));
     }
 
-    _onRemoveItems() {
+    onRemoveItems() {
       store.dispatch(RemoveItemsAction());
     }
 
     return _ViewModel(
       items: store.state.items,
-      onAddItem: _onAddItem,
-      onRemoveItem: _onRemoveItem,
-      onRemoveItems: _onRemoveItems,
+      onAddItem: onAddItem,
+      onRemoveItem: onRemoveItem,
+      onRemoveItems: onRemoveItems,
     );
   }
 }

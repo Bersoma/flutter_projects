@@ -14,10 +14,10 @@ List<Middleware<AppState>> appStateMiddleware([
   final saveItems = _saveToPrefs(state);
 
   return [
-    TypedMiddleware<AppState, AddItemAction>(saveItems),
-    TypedMiddleware<AppState, RemoveItemAction>(saveItems),
-    TypedMiddleware<AppState, RemoveItemsAction>(saveItems),
-    TypedMiddleware<AppState, GetItemsAction>(loadItems),
+    TypedMiddleware<AppState, AddItemAction>(saveItems).call,
+    TypedMiddleware<AppState, RemoveItemAction>(saveItems).call,
+    TypedMiddleware<AppState, RemoveItemsAction>(saveItems).call,
+    TypedMiddleware<AppState, GetItemsAction>(loadItems).call,
   ];
 }
 

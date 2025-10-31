@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "29161841757",
+    "project_id": "aparte-app-2aa18",
+    "storage_bucket": "aparte-app-2aa18.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29161841757:android:f75c876cc250e1f06c99b4",
+        "android_client_info": {
+          "package_name": "com.example.aparte"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4nF6drGkGd-6rkK8NHz7oow_3VrQ7-cw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
